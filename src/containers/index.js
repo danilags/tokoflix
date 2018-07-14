@@ -5,6 +5,7 @@ import {
 
 import PageApp from './PageApp';
 import HomePage from './HomePage';
+import MovieDetails from './MovieDetails';
 import RouteWithSubRoutes from './Route';
 
 const routes = [
@@ -15,6 +16,11 @@ const routes = [
         exact:true,
         path:'/',
         component: HomePage
+      },     
+      {
+        exact:true,
+        path:'/:id/:slug',
+        component: MovieDetails
       },
     ]
   }
