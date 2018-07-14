@@ -35,11 +35,16 @@ const Header = (props) => (
     <Row>
       <Col>
         <p>
-          {props.film.imdb_id.toUpperCase()} | 
+          {props.film.imdb_id !== null ? props.film.imdb_id.toUpperCase() : '-' } | 
           {converDate(props.film.release_date)} (US) | 
           { props.film.runtime } minutes | 
           IDR. {convertToRupiah(convertPrice(props.film.vote_average))} 
         </p>
+      </Col>
+    </Row>
+    <Row>
+      <Col>
+        <Button size="lg" block onClick={() => props.onBuyMovie(props.film.vote_average)} color="success" block>Beli</Button>
       </Col>
     </Row>
   </CardBody> 
