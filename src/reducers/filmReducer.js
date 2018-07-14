@@ -7,6 +7,7 @@ const initialState = {
     data: [],
     status_code: 0,
     currentPage: 0,
+    nextUrl: false
   },
   isFetch: false
 }
@@ -15,7 +16,7 @@ const filmReducer = (state = initialState, action) => {
   switch (action.type) {
     case `${GET_ALL_MOVIES}_PENDING`: {
       return {
-        ...state, filmList: initialState.filmList, isFetch: true
+        ...state, filmList: { ...state.filmList, status_code: 0 }, isFetch: true
       }
     }
     case GET_ALL_MOVIES: {
@@ -24,9 +25,10 @@ const filmReducer = (state = initialState, action) => {
         ...state,
           filmList: {
             ...state.filmList, 
-              data: results,
+              data: [ ...state.filmList.data, ...results ],
               status_code: action.payload.status,
-              currentPage: page
+              currentPage: page,
+              nextUrl: results.length ? true : false
           },
           isFetch: false
       }
