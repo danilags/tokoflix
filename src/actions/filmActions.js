@@ -1,7 +1,5 @@
 import { API_CALL } from '../utils';
 
-import { GET_ALL_MOVIES, GET_MOVIE_DETAILS } from '../constants';
-
 const secretKey = process.env.REACT_APP_SECRET_CODE;
 
 const onSuccess = (type, data) => dispatch => {
@@ -20,47 +18,26 @@ const onPending = (type) => dispatch => {
   return true;
 }
 
-export const getApiData = ({ page }) => async dispatch => {
+export const getApiData = ({ url, type }) => async dispatch => {
   
-  dispatch(onPending(GET_ALL_MOVIES));
+  dispatch(onPending(type));
   
   try {
     const option = {
       method: 'GET',
-      url: `3/movie/popular?api_key=${secretKey}&language=en-US&page=${page}`
+      url: `${url}&api_key=${secretKey}`
     };
     
     const res = await API_CALL(option);
     
-    dispatch(onSuccess(GET_ALL_MOVIES, res))
+    return dispatch(onSuccess(type, res))
   
   } catch (error) {
     const errMsg = {
       status_code: 404,
       message: 'Not found'
     };
-    onSuccess(errMsg)
+    onSuccess(type, errMsg)
   }
 }
 
-export const getMovieDetails = (id) => async dispatch => {
-  dispatch(onPending(GET_MOVIE_DETAILS));
-
-  try {
-    const option = {
-      method: 'GET',
-      url: `3/movie/${id}?api_key=${secretKey}&language=en-US`
-    };
-
-    const res = await API_CALL(option);
-    
-    return dispatch(onSuccess(GET_MOVIE_DETAILS, res));
-  
-  } catch (error) {
-    const errMsg = {
-      status_code: 404,
-      message: 'Not found'
-    };
-    onSuccess(errMsg)
-  }
-}

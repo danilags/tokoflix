@@ -12,3 +12,7 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+li.nav-item:hover {
+  cursor: pointer;
+}

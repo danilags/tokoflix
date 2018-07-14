@@ -1,6 +1,10 @@
-import { getApiData, getMovieDetails } from './filmActions';
+import { getApiData } from './filmActions';
+import { setRegion, userAuth, fetchCurrentUser, userBuyMovie } from './userAction';
 
 export {
   getApiData,
-  getMovieDetails
+  setRegion,
+  userAuth,
+  fetchCurrentUser,
+  userBuyMovie
 };
