@@ -20,7 +20,7 @@ const Body = (props) => (
     </Col>
     <Col md={4}>
       <div style={{ margin: '20px' }}>
-        <img style={{ width: '100%' }} src={`${IMAGE_BASE_URL}${props.film.poster_path}`} alt="Generic placeholder image" />
+        <img style={{ width: '100%' }} src={`${IMAGE_BASE_URL}${props.film.poster_path}`} alt={`${props.film.title}`} />
       </div>
     </Col>
   </Row>
