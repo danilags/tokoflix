@@ -12,7 +12,19 @@ const Banner = (props) => (
     <Col>
       <Media className="mt-1">
         <Media heading>
-          <img style={{ width: '100%' }} src={`${IMAGE_BASE_URL}${props.film.backdrop_path}`} alt="Generic placeholder image" />
+          {
+            props.film.backdrop_path === null ?
+            <img
+              style={{ width: '50%' }} 
+              src={`http://pixselo.com/wp-content/uploads/2018/03/dummy-placeholder-image-400x400.jpg`}
+            />
+            :
+            <img 
+              style={{ width: '100%' }}
+              src={`${IMAGE_BASE_URL}${props.film.backdrop_path}`} 
+              alt={`${props.film.title}`} 
+            />
+          }
         </Media>
       </Media>
     </Col>
