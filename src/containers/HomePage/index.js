@@ -8,8 +8,10 @@ import {
   Alert
 } from 'reactstrap';
 
+import { GET_ALL_MOVIES } from '../../constants';
 import { Wrapper, FilmCard } from '../../components';
 import { getApiData } from '../../actions';
+const secretKey = process.env.REACT_APP_SECRET_CODE;
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -18,7 +20,8 @@ class HomePage extends React.Component {
       page: 1,
       prevY: 0,
       loading: false,
-      hasMore: true
+      hasMore: true,
+      region: localStorage.getItem('region')
     }
   }
 
@@ -26,7 +29,7 @@ class HomePage extends React.Component {
     if (this.props.location.search !== "") {
       const params = QueryString.parse(this.props.location.search);
       this.setState({
-        page: params.page
+        page: parseInt(params.page)
       })
     } else {
       this.setState({
@@ -50,7 +53,11 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getApiData({ page: this.state.page });
+    const { page } = this.state;
+    this.props.getApiData({ 
+      url: `3/movie/now_playing?language=en-US&page=${page}&region=${this.state.region}`,
+      type: GET_ALL_MOVIES
+    });
     let options = {
       root: null, 
       rootMargin: '0px',
@@ -70,7 +77,10 @@ class HomePage extends React.Component {
     if (this.state.hasMore) {
       if (this.state.prevY > y) {
         const curPage = this.state.page + 1;
-        this.props.getApiData({ page: curPage });
+        this.props.getApiData({ 
+          url: `3/movie/now_playing?language=en-US&page=${curPage}&region=${this.state.region}`,
+          type: GET_ALL_MOVIES
+        });
         await this.setState({ page: curPage, loading: true });
         this.props.history.push(`/?page=${this.state.page}`);
       }

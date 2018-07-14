@@ -45,7 +45,9 @@ const convertPrice = (rating) => {
     return 16350;
  } else if (rating >= 8 && rating <= 10) {
     return 21250;
- } 
+ } else {
+   return 3000;
+ }
 }
 
 const convertToRupiah = (angka) => {
