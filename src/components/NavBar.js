@@ -16,8 +16,12 @@ const NavBar = (props) => (
     <Collapse isOpen={false} navbar>
       <Nav className="ml-auto" navbar>
         <NavItem>
-          <NavLink style={{ color: '#fff' }} href="https://github.com/danilags">Daniel Agus</NavLink>
+          <NavLink onClick={() => props.onSetRegion('ID')} style={{ color: '#fff' }}>Indonesia</NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink onClick={() => props.onSetRegion('US')} style={{ color: '#fff' }}>Amerika</NavLink>
+        </NavItem>
+        {props.onRenderButtonAuth()}
       </Nav>
     </Collapse>
   </Navbar>
