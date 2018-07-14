@@ -44,7 +44,6 @@ export const getApiData = ({ page }) => async dispatch => {
 }
 
 export const getMovieDetails = (id) => async dispatch => {
-  console.log('id movie', id);
   dispatch(onPending(GET_MOVIE_DETAILS));
 
   try {
