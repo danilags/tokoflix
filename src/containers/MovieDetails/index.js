@@ -2,16 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { 
   Alert, 
-  Row, 
-  Col, 
-  Card, 
-  CardBody,
-  Media,
   CardText
 } from 'reactstrap'; 
 
-import { GET_MOVIE_DETAILS, GET_SIMILAR_MOVIE, IMAGE_BASE_URL } from '../../constants';
-import { Wrapper, FilmCard, CardDetails, SimilarMovie } from '../../components';
+import { GET_MOVIE_DETAILS, GET_SIMILAR_MOVIE } from '../../constants';
+import { Wrapper, CardDetails, SimilarMovie } from '../../components';
 import { getApiData, userBuyMovie } from '../../actions';
 
 class MovieDetails extends React.Component {
@@ -24,7 +19,8 @@ class MovieDetails extends React.Component {
       idMovie: this.props.match.params.id,
       movieDetails: null,
       similarMovie: [],
-      region: localStorage.getItem('region')
+      region: localStorage.getItem('region'),
+      isLoading: false
     }
     this.onBuyMovie = this.onBuyMovie.bind(this);
   }
@@ -46,7 +42,6 @@ class MovieDetails extends React.Component {
 
   async handleObserver(entities, observer) {
     const { idMovie } = this.state;
-    const { character } = this.props;
     const y = entities[0].boundingClientRect.y;
     if (this.state.prevY > y) {
       const curPage = this.state.page + 1;
@@ -82,7 +77,6 @@ class MovieDetails extends React.Component {
       url: `3/movie/${idMovie}/similar?language=en-US`,
       type: GET_SIMILAR_MOVIE
     });
-    console.log('requestSimilar ', requestSimilar);
     const { data } = requestDetails.payload;
     
     await this.setState({ 
@@ -91,15 +85,36 @@ class MovieDetails extends React.Component {
     })
   }
 
-  onBuyMovie(vote_average) {
-    this.props.userBuyMovie(vote_average);
+  async onBuyMovie(film) {
+    const { currentUser } = this.props.dataUser;
+    const { id, title, vote_average } = film;
+    const movie = {
+      id, title, vote_average
+    }
+    if (currentUser.token !== null) {
+      await this.setState({ isLoading: true })
+      this.props.userBuyMovie(movie);
+      setTimeout(() => {
+        alert('Thank you');
+        this.setState({ isLoading: false })
+      }, 1200)
+    } else {
+      alert('Silahkan masuk terlebih dahulu');
+    }
+    
   }
 
   renderDetails() {
     if (this.state.movieDetails === null) {
       return <Alert color="primary"><h4>Loading...</h4></Alert>
     }
-    return <CardDetails film={this.state.movieDetails} onBuyMovie={this.onBuyMovie} />
+    return (
+      <CardDetails 
+        film={this.state.movieDetails} 
+        onBuyMovie={this.onBuyMovie}
+        isLoading={this.state.isLoading} 
+      />
+    )
   }
 
   slugify(title) {
@@ -141,12 +156,13 @@ class MovieDetails extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  films: state.filmReducer
+  films: state.filmReducer,
+  dataUser: state.userReducer
 });
 
 const mapDispatchToProps = dispatch => ({
   getApiData: (params) => dispatch(getApiData(params)),
-  userBuyMovie: (vote_average) => dispatch(userBuyMovie(vote_average))
+  userBuyMovie: (movie) => dispatch(userBuyMovie(movie))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetails)
