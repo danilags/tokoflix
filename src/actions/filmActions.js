@@ -1,6 +1,6 @@
 import { API_CALL } from '../utils';
 
-const secretKey = process.env.REACT_APP_SECRET_CODE;
+const secretKey = ENV['REACT_APP_SECRET_CODE'];
 
 const onSuccess = (type, data) => dispatch => {
   const res = dispatch({
