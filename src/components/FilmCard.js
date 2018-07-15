@@ -15,8 +15,11 @@ const FilmCard = (props) => (
     </CardBody>
     <CardBody>
       <CardTitle>{props.film.title}</CardTitle>
-      <CardTitle>Card subtitle</CardTitle>
-      <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+      <CardText>
+        <span style={{ padding: '2px' }}>{props.film.release_date} </span> | 
+        <span style={{ padding: '2px' }}>{props.film.vote_average} </span> |
+        <spn style={{ padding: '2px' }}>{props.film.adult ? 'Dewasa' : 'Remaja'}</spn>
+      </CardText>
     </CardBody>
   </Card>
 )
