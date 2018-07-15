@@ -6,7 +6,7 @@ import {
   NavLink, 
 } from 'reactstrap';
 
-import { setRegion, userAuth, fetchCurrentUser } from '../../actions';
+import { setRegion, userAuth, fetchCurrentUser, userLogout } from '../../actions';
 import Route from '../Route';
 import { NavBar, ModalText } from '../../components';
 import { convertToRupiah } from '../../utils';
@@ -16,7 +16,9 @@ class PageApp extends React.Component {
     super(props)
     this.state = {
       isOpen: false,
-      name: ''
+      name: '',
+      isLogged: false,
+      isLoading: false
     }
 
     this.onSetRegion = this.onSetRegion.bind(this);
@@ -24,6 +26,7 @@ class PageApp extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.onChangesName = this.onChangesName.bind(this);
     this._onSubmit = this._onSubmit.bind(this);
+    this.onLogout = this.onLogout.bind(this);
   }
 
   onChangesName(e) {
@@ -32,9 +35,17 @@ class PageApp extends React.Component {
     this.setState({...lastState});
   }
 
-  _onSubmit(e) {
+  async componentWillReceiveProps(nextProps) {
+    if (this.props.dataUser.token !== nextProps.dataUser.token && nextProps.isLogin) {
+      await this.toggle();
+      await this.setState({ isLoading: false })
+    }
+  }
+
+  async _onSubmit(e) {
     e.preventDefault();
-    this.props.userAuth(this.state.name);
+    await this.setState({ isLoading: true })
+    await this.props.userAuth(this.state.name);
   }
 
   onSetRegion(params) {
@@ -44,39 +55,49 @@ class PageApp extends React.Component {
   onRenderButtonAuth() {
     const currenUser = this.props.dataUser;
     let buttons
-    if (currenUser === null) {
-      buttons = [
+    if (currenUser.token === null) {
+      buttons = (
         <NavItem onClick={this.toggle}>
           <NavLink style={{ color: '#fff' }}>
             Login sebagai Tamu
           </NavLink>
-        </NavItem>,
-      ]
+        </NavItem>
+      )
     } else {
-      buttons = [
+      buttons = (
         <NavItem onClick={this.toggle}>
           <NavLink style={{ color: '#fff' }}>
             { currenUser.name } - Rp. {convertToRupiah(currenUser.userBalance)}
           </NavLink>
-        </NavItem>,
-      ]
+        </NavItem>
+      )
     }
     return buttons;
   }
 
   toggle() {
+    const currenUser = this.props.dataUser;
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
+      isLogged: currenUser.token === null ? false : true
     })
+  }
+
+  async onLogout() {
+    await this.toggle();
+    this.props.userLogout();
   }
 
   renderModal() {
     return (
       <ModalText 
         isOpen={this.state.isOpen}
+        isLogged={this.state.isLogged}
+        isLoading={this.state.isLoading}
         toggle={this.toggle}
         onChangesName={this.onChangesName}
         onSubmitData={this._onSubmit}
+        onLogout={this.onLogout}
       />
     )
   }
@@ -107,13 +128,15 @@ class PageApp extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  dataUser: state.userReducer.currentUser
+  dataUser: state.userReducer.currentUser,
+  isLogin: state.userReducer.isLogin
 });
 
 const mapDispatchToProps = dispatch => ({
   setRegion: (params) => dispatch(setRegion(params)),
   userAuth: (params) => dispatch(userAuth(params)),
-  fetchCurrentUser: () => dispatch(fetchCurrentUser())
+  fetchCurrentUser: () => dispatch(fetchCurrentUser()),
+  userLogout: () => dispatch(userLogout())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageApp);
