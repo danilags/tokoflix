@@ -20,7 +20,7 @@ import Body from './Body';
 
 const CardDetail = (props) => (
   <Card>
-    <Header film={props.film} onBuyMovie={props.onBuyMovie} />
+    <Header film={props.film} onBuyMovie={props.onBuyMovie} isLoading={props.isLoading} />
     <Banner film={props.film} />
     <Body film={props.film} />
   </Card>

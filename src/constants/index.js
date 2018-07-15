@@ -6,5 +6,6 @@ export const GET_SIMILAR_MOVIE = 'GET_SIMILAR_MOVIE';
 export const FETCH_CURRENT_USER = 'FETCH_CURRENT_USER';
 export const LOGIN_GUEST = 'LOGIN_GUEST';
 export const USER_BUY_MOVIE = 'USER_BUY_MOVIE';
+export const USER_LOGOUT = 'USER_LOGOUT';
 
 export const REQUEST_TOKEN=(new Buffer('token_').toString('base64'));
