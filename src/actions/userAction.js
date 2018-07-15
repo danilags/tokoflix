@@ -19,20 +19,11 @@ const onSuccess = (type, data) => dispatch => {
   return res;
 }
 
-const onPending = (type) => dispatch => {
-  dispatch({
-    type: `${type}_PENDING`,
-    payload: true
-  });
-  return true;
-}
-
 export const fetchCurrentUser = () => async dispatch => {
   try {
     const name = localStorage.getItem('name');
     const userBalance = localStorage.getItem('user_balance');
     const token = localStorage.getItem(REQUEST_TOKEN);
-    const currentUserMovies = localStorage.getItem('user_movies');
     const payloadUser = {
       name,
       userBalance,
@@ -57,9 +48,9 @@ export const userAuth = (name) => async dispatch => {
     
     const res = await API_CALL(option);
     const { guest_session_id } = res.data;
-    const onSetName = await localStorage.setItem('name', name);
-    const onSetToken = await localStorage.setItem(REQUEST_TOKEN, guest_session_id);
-    const onSetBalance = await localStorage.setItem('user_balance', 100000);
+    await localStorage.setItem('name', name);
+    await localStorage.setItem(REQUEST_TOKEN, guest_session_id);
+    await localStorage.setItem('user_balance', 100000);
     const payloadUser = {
       ...res,
       name,
@@ -68,26 +59,18 @@ export const userAuth = (name) => async dispatch => {
     return dispatch(onSuccess(LOGIN_GUEST, payloadUser))
   
   } catch (error) {
-    const errMsg = {
-      status_code: 404,
-      message: 'Not found'
-    };
-    onSuccess(LOGIN_GUEST, name)
+    onSuccess(LOGIN_GUEST, error)
   }
 }
 
 export const setRegion = (params) => async dispatch => {
   try {
-    const onSet = await localStorage.setItem('region', params);
+    await localStorage.setItem('region', params);
     window.location.reload();
     return dispatch(onSuccess('SET_REGION', params))
   
   } catch (error) {
-    const errMsg = {
-      status_code: 404,
-      message: 'Not found'
-    };
-    onSuccess('SET_REGION', params)
+    onSuccess('SET_REGION', error)
   }
 }
 
@@ -99,16 +82,12 @@ export const userBuyMovie = ({ id, name, vote_average }) => async dispatch => {
     // await localStorage.setItem('user_movies', []);
     if (token) {
       const currentBalance = userBalance - moviePrice;
-      const onSetBalance = await localStorage.setItem('user_balance', currentBalance);
+      await localStorage.setItem('user_balance', currentBalance);
     }
     return dispatch(onSuccess(USER_BUY_MOVIE, moviePrice))
   
   } catch (error) {
-    const errMsg = {
-      status_code: 404,
-      message: 'Not found'
-    };
-    onSuccess(USER_BUY_MOVIE, true)
+    onSuccess(USER_BUY_MOVIE, error)
   }
 }
 
@@ -124,10 +103,6 @@ export const userLogout = () => async dispatch => {
     return dispatch(onSuccess(USER_LOGOUT, true))
   
   } catch (error) {
-    const errMsg = {
-      status_code: 404,
-      message: 'Not found'
-    };
-    onSuccess(USER_LOGOUT, true)
+    onSuccess(USER_LOGOUT, error)
   }
 }
