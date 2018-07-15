@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ModalText /> Component <ModalText /> and matches snapShot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ModalText
+    isLoading={true}
+    isLogged={true}
+    isOpen={true}
+    onChangesName={[Function]}
+    onLogout={[Function]}
+    onSubmitData={[Function]}
+    onToggle={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "autoFocus": true,
+      "backdrop": true,
+      "backdropTransition": Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      },
+      "centered": false,
+      "children": Array [
+        <ModalHeader
+          closeAriaLabel="Close"
+          tag="h5"
+          wrapTag="div"
+        >
+          Guest
+        </ModalHeader>,
+        <ModalBody
+          tag="div"
+        >
+          <Button
+            color="secondary"
+            onClick={[Function]}
+            tag="button"
+          >
+            Keluar
+          </Button>
+        </ModalBody>,
+      ],
+      "fade": true,
+      "isOpen": true,
+      "keyboard": true,
+      "modalTransition": Object {
+        "timeout": 300,
+      },
+      "onClosed": [Function],
+      "onOpened": [Function],
+      "role": "dialog",
+      "toggle": [Function],
+      "zIndex": 1050,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": "Guest",
+          "closeAriaLabel": "Close",
+          "tag": "h5",
+          "toggle": undefined,
+          "wrapTag": "div",
+        },
+        "ref": null,
+        "rendered": "Guest",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Button
+            color="secondary"
+            onClick={[Function]}
+            tag="button"
+          >
+            Keluar
+          </Button>,
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Keluar",
+            "color": "secondary",
+            "onClick": [Function],
+            "tag": "button",
+          },
+          "ref": null,
+          "rendered": "Keluar",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "autoFocus": true,
+        "backdrop": true,
+        "backdropTransition": Object {
+          "mountOnEnter": true,
+          "timeout": 150,
+        },
+        "centered": false,
+        "children": Array [
+          <ModalHeader
+            closeAriaLabel="Close"
+            tag="h5"
+            wrapTag="div"
+          >
+            Guest
+          </ModalHeader>,
+          <ModalBody
+            tag="div"
+          >
+            <Button
+              color="secondary"
+              onClick={[Function]}
+              tag="button"
+            >
+              Keluar
+            </Button>
+          </ModalBody>,
+        ],
+        "fade": true,
+        "isOpen": true,
+        "keyboard": true,
+        "modalTransition": Object {
+          "timeout": 300,
+        },
+        "onClosed": [Function],
+        "onOpened": [Function],
+        "role": "dialog",
+        "toggle": [Function],
+        "zIndex": 1050,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "Guest",
+            "closeAriaLabel": "Close",
+            "tag": "h5",
+            "toggle": undefined,
+            "wrapTag": "div",
+          },
+          "ref": null,
+          "rendered": "Guest",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Button
+              color="secondary"
+              onClick={[Function]}
+              tag="button"
+            >
+              Keluar
+            </Button>,
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Keluar",
+              "color": "secondary",
+              "onClick": [Function],
+              "tag": "button",
+            },
+            "ref": null,
+            "rendered": "Keluar",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
