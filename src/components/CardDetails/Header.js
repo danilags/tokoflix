@@ -44,7 +44,16 @@ const Header = (props) => (
     </Row>
     <Row>
       <Col>
-        <Button size="lg" block onClick={() => props.onBuyMovie(props.film.vote_average)} color="success" block>Beli</Button>
+        <Button 
+          size="lg" 
+          block 
+          onClick={() => props.onBuyMovie(props.film)} 
+          color="success" 
+          block
+          disabled={props.isLoading}
+        >
+          {props.isLoading ? 'Loading...' : 'Beli'}
+        </Button>
       </Col>
     </Row>
   </CardBody> 
