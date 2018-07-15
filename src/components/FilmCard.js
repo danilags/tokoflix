@@ -3,7 +3,6 @@ import { IMAGE_BASE_URL } from '../constants';
 
 import {
   Card,
-  CardImg,
   CardBody,
   CardTitle,
   CardText,

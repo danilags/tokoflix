@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import { Redirect } from 'react-router';
 import QueryString from 'query-string';
 import {
   Row,
@@ -11,7 +10,6 @@ import {
 import { GET_ALL_MOVIES } from '../../constants';
 import { Wrapper, FilmCard } from '../../components';
 import { getApiData } from '../../actions';
-const secretKey = process.env.REACT_APP_SECRET_CODE;
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -72,7 +70,6 @@ class HomePage extends React.Component {
   }
 
   async handleObserver(entities, observer) {
-    const { character } = this.props;
     const y = entities[0].boundingClientRect.y;
     if (this.state.hasMore) {
       if (this.state.prevY > y) {
@@ -120,7 +117,7 @@ class HomePage extends React.Component {
           ref={loadingRef => (this.loadingRef = loadingRef)}
           style={loadingCSS}
         >
-          <Alert><span style={loadingTextCSS}>Loading...</span></Alert>
+          <Alert style={loadingTextCSS}><span>Loading...</span></Alert>
         </div>
       </Wrapper>
     )

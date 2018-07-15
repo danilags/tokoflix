@@ -1,15 +1,12 @@
 import React from 'react';
 
 import {
-  Card,
   CardBody,
-  CardText,
   Row,
   Col,
   Badge,
   ButtonGroup,
   Button,
-  Media
 } from 'reactstrap';
 
 import { converDate, convertPrice, convertToRupiah } from '../../utils';

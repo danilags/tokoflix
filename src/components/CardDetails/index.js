@@ -1,18 +1,7 @@
 import React from 'react';
 import {
   Card,
-  CardBody,
-  CardText,
-  Jumbotron,
-  Row,
-  Col,
-  Badge,
-  ButtonGroup,
-  Button,
-  Media
 } from 'reactstrap';
-
-import { IMAGE_BASE_URL } from '../../constants';
 
 import Header from './Header';
 import Banner from './Banner';

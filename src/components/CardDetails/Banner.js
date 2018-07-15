@@ -17,6 +17,7 @@ const Banner = (props) => (
             <img
               style={{ width: '50%' }} 
               src={`http://pixselo.com/wp-content/uploads/2018/03/dummy-placeholder-image-400x400.jpg`}
+              alt={`${props.film.title}`} 
             />
             :
             <img 
