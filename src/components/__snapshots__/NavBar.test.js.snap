@@ -1,0 +1,798 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar /> Component <NavBar /> and matches snapShot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NavBar
+    onRenderButtonAuth={[Function]}
+    onSetRegion={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <NavbarBrand
+          href="/"
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+          tag="a"
+        >
+          TokoFlix
+        </NavbarBrand>,
+        <NavbarToggler
+          onClick={[Function]}
+          tag="button"
+          type="button"
+        />,
+        <Collapse
+          appear={false}
+          enter={true}
+          exit={true}
+          in={false}
+          isOpen={false}
+          mountOnEnter={false}
+          navbar={true}
+          onEnter={[Function]}
+          onEntered={[Function]}
+          onEntering={[Function]}
+          onExit={[Function]}
+          onExited={[Function]}
+          onExiting={[Function]}
+          tag="div"
+          timeout={350}
+          unmountOnExit={false}
+        >
+          <Nav
+            className="ml-auto"
+            navbar={true}
+            tag="ul"
+            vertical={false}
+          >
+            <NavItem
+              tag="li"
+            >
+              <NavLink
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "#fff",
+                  }
+                }
+                tag="a"
+              >
+                Indonesia
+              </NavLink>
+            </NavItem>
+            <NavItem
+              tag="li"
+            >
+              <NavLink
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "#fff",
+                  }
+                }
+                tag="a"
+              >
+                Amerika
+              </NavLink>
+            </NavItem>
+            <NavItem
+              tag="li"
+            >
+              <NavLink
+                style={
+                  Object {
+                    "color": "#fff",
+                  }
+                }
+                tag="a"
+              >
+                Login sebagai Tamu
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>,
+      ],
+      "expand": "md",
+      "light": true,
+      "style": Object {
+        "background": "#42b549",
+        "position": "fixed",
+        "top": 0,
+        "width": "100%",
+        "zIndex": 20,
+      },
+      "tag": "nav",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": "TokoFlix",
+          "href": "/",
+          "style": Object {
+            "color": "#fff",
+          },
+          "tag": "a",
+        },
+        "ref": null,
+        "rendered": "TokoFlix",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "onClick": [Function],
+          "tag": "button",
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "appear": false,
+          "children": <Nav
+            className="ml-auto"
+            navbar={true}
+            tag="ul"
+            vertical={false}
+          >
+            <NavItem
+              tag="li"
+            >
+              <NavLink
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "#fff",
+                  }
+                }
+                tag="a"
+              >
+                Indonesia
+              </NavLink>
+            </NavItem>
+            <NavItem
+              tag="li"
+            >
+              <NavLink
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "#fff",
+                  }
+                }
+                tag="a"
+              >
+                Amerika
+              </NavLink>
+            </NavItem>
+            <NavItem
+              tag="li"
+            >
+              <NavLink
+                style={
+                  Object {
+                    "color": "#fff",
+                  }
+                }
+                tag="a"
+              >
+                Login sebagai Tamu
+              </NavLink>
+            </NavItem>
+          </Nav>,
+          "enter": true,
+          "exit": true,
+          "in": false,
+          "isOpen": false,
+          "mountOnEnter": false,
+          "navbar": true,
+          "onEnter": [Function],
+          "onEntered": [Function],
+          "onEntering": [Function],
+          "onExit": [Function],
+          "onExited": [Function],
+          "onExiting": [Function],
+          "tag": "div",
+          "timeout": 350,
+          "unmountOnExit": false,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Indonesia
+                </NavLink>
+              </NavItem>,
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Amerika
+                </NavLink>
+              </NavItem>,
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Login sebagai Tamu
+                </NavLink>
+              </NavItem>,
+            ],
+            "className": "ml-auto",
+            "navbar": true,
+            "tag": "ul",
+            "vertical": false,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Indonesia
+                </NavLink>,
+                "tag": "li",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Indonesia",
+                  "onClick": [Function],
+                  "style": Object {
+                    "color": "#fff",
+                  },
+                  "tag": "a",
+                },
+                "ref": null,
+                "rendered": "Indonesia",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Amerika
+                </NavLink>,
+                "tag": "li",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Amerika",
+                  "onClick": [Function],
+                  "style": Object {
+                    "color": "#fff",
+                  },
+                  "tag": "a",
+                },
+                "ref": null,
+                "rendered": "Amerika",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <NavLink
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Login sebagai Tamu
+                </NavLink>,
+                "onClick": undefined,
+                "tag": "li",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Login sebagai Tamu",
+                  "style": Object {
+                    "color": "#fff",
+                  },
+                  "tag": "a",
+                },
+                "ref": null,
+                "rendered": "Login sebagai Tamu",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <NavbarBrand
+            href="/"
+            style={
+              Object {
+                "color": "#fff",
+              }
+            }
+            tag="a"
+          >
+            TokoFlix
+          </NavbarBrand>,
+          <NavbarToggler
+            onClick={[Function]}
+            tag="button"
+            type="button"
+          />,
+          <Collapse
+            appear={false}
+            enter={true}
+            exit={true}
+            in={false}
+            isOpen={false}
+            mountOnEnter={false}
+            navbar={true}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            tag="div"
+            timeout={350}
+            unmountOnExit={false}
+          >
+            <Nav
+              className="ml-auto"
+              navbar={true}
+              tag="ul"
+              vertical={false}
+            >
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Indonesia
+                </NavLink>
+              </NavItem>
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Amerika
+                </NavLink>
+              </NavItem>
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Login sebagai Tamu
+                </NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>,
+        ],
+        "expand": "md",
+        "light": true,
+        "style": Object {
+          "background": "#42b549",
+          "position": "fixed",
+          "top": 0,
+          "width": "100%",
+          "zIndex": 20,
+        },
+        "tag": "nav",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "TokoFlix",
+            "href": "/",
+            "style": Object {
+              "color": "#fff",
+            },
+            "tag": "a",
+          },
+          "ref": null,
+          "rendered": "TokoFlix",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onClick": [Function],
+            "tag": "button",
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "appear": false,
+            "children": <Nav
+              className="ml-auto"
+              navbar={true}
+              tag="ul"
+              vertical={false}
+            >
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Indonesia
+                </NavLink>
+              </NavItem>
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Amerika
+                </NavLink>
+              </NavItem>
+              <NavItem
+                tag="li"
+              >
+                <NavLink
+                  style={
+                    Object {
+                      "color": "#fff",
+                    }
+                  }
+                  tag="a"
+                >
+                  Login sebagai Tamu
+                </NavLink>
+              </NavItem>
+            </Nav>,
+            "enter": true,
+            "exit": true,
+            "in": false,
+            "isOpen": false,
+            "mountOnEnter": false,
+            "navbar": true,
+            "onEnter": [Function],
+            "onEntered": [Function],
+            "onEntering": [Function],
+            "onExit": [Function],
+            "onExited": [Function],
+            "onExiting": [Function],
+            "tag": "div",
+            "timeout": 350,
+            "unmountOnExit": false,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <NavItem
+                  tag="li"
+                >
+                  <NavLink
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "color": "#fff",
+                      }
+                    }
+                    tag="a"
+                  >
+                    Indonesia
+                  </NavLink>
+                </NavItem>,
+                <NavItem
+                  tag="li"
+                >
+                  <NavLink
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "color": "#fff",
+                      }
+                    }
+                    tag="a"
+                  >
+                    Amerika
+                  </NavLink>
+                </NavItem>,
+                <NavItem
+                  tag="li"
+                >
+                  <NavLink
+                    style={
+                      Object {
+                        "color": "#fff",
+                      }
+                    }
+                    tag="a"
+                  >
+                    Login sebagai Tamu
+                  </NavLink>
+                </NavItem>,
+              ],
+              "className": "ml-auto",
+              "navbar": true,
+              "tag": "ul",
+              "vertical": false,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <NavLink
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "color": "#fff",
+                      }
+                    }
+                    tag="a"
+                  >
+                    Indonesia
+                  </NavLink>,
+                  "tag": "li",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Indonesia",
+                    "onClick": [Function],
+                    "style": Object {
+                      "color": "#fff",
+                    },
+                    "tag": "a",
+                  },
+                  "ref": null,
+                  "rendered": "Indonesia",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <NavLink
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "color": "#fff",
+                      }
+                    }
+                    tag="a"
+                  >
+                    Amerika
+                  </NavLink>,
+                  "tag": "li",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Amerika",
+                    "onClick": [Function],
+                    "style": Object {
+                      "color": "#fff",
+                    },
+                    "tag": "a",
+                  },
+                  "ref": null,
+                  "rendered": "Amerika",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <NavLink
+                    style={
+                      Object {
+                        "color": "#fff",
+                      }
+                    }
+                    tag="a"
+                  >
+                    Login sebagai Tamu
+                  </NavLink>,
+                  "onClick": undefined,
+                  "tag": "li",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Login sebagai Tamu",
+                    "style": Object {
+                      "color": "#fff",
+                    },
+                    "tag": "a",
+                  },
+                  "ref": null,
+                  "rendered": "Login sebagai Tamu",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

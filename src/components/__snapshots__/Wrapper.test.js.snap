@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Wrapper /> Component renders and matches snapShot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Wrapper
+    0={
+      <h3>
+        Child 1
+      </h3>
+    }
+    1={
+      <p>
+        Child 2
+      </p>
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": undefined,
+      "style": Object {
+        "flex": 1,
+        "marginBottom": "3rem",
+        "marginTop": "3rem",
+        "minHeight": "500px",
+        "padding": "3rem 0rem",
+      },
+      "tag": "div",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": undefined,
+        "style": Object {
+          "flex": 1,
+          "marginBottom": "3rem",
+          "marginTop": "3rem",
+          "minHeight": "500px",
+          "padding": "3rem 0rem",
+        },
+        "tag": "div",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<Wrapper /> test Wrapper matches MOUNT 1`] = `
+<div
+  $$typeof={Symbol(react.element)}
+  _owner={null}
+  _store={Object {}}
+  props={Object {}}
+  type={[Function]}
+/>
+`;
