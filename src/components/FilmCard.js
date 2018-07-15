@@ -18,7 +18,7 @@ const FilmCard = (props) => (
       <CardText>
         <span style={{ padding: '2px' }}>{props.film.release_date} </span> | 
         <span style={{ padding: '2px' }}>{props.film.vote_average} </span> |
-        <spn style={{ padding: '2px' }}>{props.film.adult ? 'Dewasa' : 'Remaja'}</spn>
+        <span style={{ padding: '2px' }}>{props.film.adult ? 'Dewasa' : 'Remaja'}</span>
       </CardText>
     </CardBody>
   </Card>
