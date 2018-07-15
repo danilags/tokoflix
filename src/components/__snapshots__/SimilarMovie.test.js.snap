@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SimilarMovie /> test SimilarMovie matches MOUNT 1`] = `
+<div
+  $$typeof={Symbol(react.element)}
+  _owner={null}
+  _store={Object {}}
+  props={Object {}}
+  type={[Function]}
+/>
+`;
