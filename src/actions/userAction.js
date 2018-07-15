@@ -4,7 +4,8 @@ import {
   REQUEST_TOKEN, 
   LOGIN_GUEST, 
   FETCH_CURRENT_USER,
-  USER_BUY_MOVIE
+  USER_BUY_MOVIE,
+  USER_LOGOUT
 } from '../constants';
 
 
@@ -31,10 +32,11 @@ export const fetchCurrentUser = () => async dispatch => {
     const name = localStorage.getItem('name');
     const userBalance = localStorage.getItem('user_balance');
     const token = localStorage.getItem(REQUEST_TOKEN);
+    const currentUserMovies = localStorage.getItem('user_movies');
     const payloadUser = {
       name,
       userBalance,
-      token
+      token,
     };
     return dispatch(onSuccess(FETCH_CURRENT_USER, payloadUser))
   } catch (error) {
@@ -58,7 +60,12 @@ export const userAuth = (name) => async dispatch => {
     const onSetName = await localStorage.setItem('name', name);
     const onSetToken = await localStorage.setItem(REQUEST_TOKEN, guest_session_id);
     const onSetBalance = await localStorage.setItem('user_balance', 100000);
-    return dispatch(onSuccess(LOGIN_GUEST, res))
+    const payloadUser = {
+      ...res,
+      name,
+      user_balance: await localStorage.getItem('user_balance')
+    }
+    return dispatch(onSuccess(LOGIN_GUEST, payloadUser))
   
   } catch (error) {
     const errMsg = {
@@ -84,11 +91,12 @@ export const setRegion = (params) => async dispatch => {
   }
 }
 
-export const userBuyMovie = (vote) => async dispatch => {
+export const userBuyMovie = ({ id, name, vote_average }) => async dispatch => {
   try {
-    const moviePrice = convertPrice(vote);
+    const moviePrice = convertPrice(vote_average);
     const userBalance = localStorage.getItem('user_balance');
     const token = localStorage.getItem(REQUEST_TOKEN);
+    // await localStorage.setItem('user_movies', []);
     if (token) {
       const currentBalance = userBalance - moviePrice;
       const onSetBalance = await localStorage.setItem('user_balance', currentBalance);
@@ -101,5 +109,25 @@ export const userBuyMovie = (vote) => async dispatch => {
       message: 'Not found'
     };
     onSuccess(USER_BUY_MOVIE, true)
+  }
+}
+
+export const userLogout = () => async dispatch => {
+  try {
+    const token = localStorage.getItem(REQUEST_TOKEN);
+    if (token) {
+      await localStorage.removeItem('name');
+      await localStorage.removeItem(REQUEST_TOKEN);
+      await localStorage.removeItem('user_balance');
+      window.location.reload();
+    }
+    return dispatch(onSuccess(USER_LOGOUT, true))
+  
+  } catch (error) {
+    const errMsg = {
+      status_code: 404,
+      message: 'Not found'
+    };
+    onSuccess(USER_LOGOUT, true)
   }
 }
