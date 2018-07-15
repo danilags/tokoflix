@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import QueryString from 'query-string';
 import {
   Row,
   Col,
@@ -25,9 +24,14 @@ class HomePage extends React.Component {
 
   componentWillMount() {
     if (this.props.location.search !== "") {
-      const params = QueryString.parse(this.props.location.search);
+      var test = new URLSearchParams(this.props.location.search);
+      let fixPage = 0;
+      for(let pair of test.entries()) {
+        fixPage = pair[1]
+        // console.log(pair[0]+ ', '+ pair[1]); 
+      }
       this.setState({
-        page: parseInt(params.page)
+        page: parseInt(fixPage)
       })
     } else {
       this.setState({
