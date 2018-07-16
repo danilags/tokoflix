@@ -55,9 +55,10 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    const { page } = this.state;
+    const { page, region } = this.state;
+    const defaultRegion = region === null ? 'ID' : region;
     this.props.getApiData({ 
-      url: `3/movie/now_playing?language=en-US&page=${page}&region=${this.state.region}`,
+      url: `3/movie/now_playing?language=en-US&page=${page}&region=${defaultRegion}`,
       type: GET_ALL_MOVIES
     });
     let options = {
