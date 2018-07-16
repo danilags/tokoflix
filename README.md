@@ -11,6 +11,8 @@ The app using react, reactstrap, redux, redux-logger, redux-thunk, and react-rou
 ```
 > git clone https://github.com/danilags/tokoflix
 > npm install
+> cat .env
+> REACT_APP_SECRET_CODE=YOUR_ACCESS_KEY
 > npm start
 ```
 
