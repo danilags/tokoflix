@@ -1,7 +1,7 @@
 # TokoFlix Application
 
 ## Descriptions
-Application using starwars API https://developers.themoviedb.org/3/getting-started/introduction
+Application using https://developers.themoviedb.org/3/getting-started/introduction APIS
 
 ## Getting Started
 The app using react, reactstrap, redux, redux-logger, redux-thunk, and react-router-dom.
